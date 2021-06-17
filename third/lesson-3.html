@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+    <script>
+        // 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+
+        var nums = 0;
+        while (nums <= 100) {
+            var check = true;
+            for (var i = 2; i < nums; i++){
+                if (nums%i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) console.log(nums);
+            nums++;
+        }
+
+        // 2. С этого урока начинаем работать с функционалом интернет-магазина. 
+        // Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+
+        var basket = [
+            {
+                product: "t-shirt",
+                price: getNumber(50, 100)
+            },
+            {
+                product: "bikini",
+                price: getNumber(50, 100)
+            },
+            {
+                product: "boots",
+                price: getNumber(50, 100)
+            },
+            {
+                product: "jeans",
+                price: getNumber(50, 100)
+            }
+        ];
+        var basketPrice = 0;
+        for (var prod of basket){
+            basketPrice += prod.price;
+            console.log("Товар " + prod.product + " стоит: " + prod.price);
+        }
+
+        console.log("Стоимость корзины: " + basketPrice + " у.е.");
+
+
+
+        // 3. Товары в корзине хранятся в массиве. Задачи:
+        // a) Организовать такой массив для хранения товаров в корзине;
+        // b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+        function countBasketPrice(basket) {
+            var funBasketPrice = 0;
+            for (var prod of basket){
+                funBasketPrice += prod.price;
+            }
+            return funBasketPrice;
+        }
+
+        console.log("Стоимость корзины: " + countBasketPrice(basket) + " у.е.");
+
+
+
+        
+    </script>
+</body>
+</html>

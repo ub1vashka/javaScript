@@ -1,0 +1,9 @@
+.img__small {
+    object-fit: cover;
+}
+
+.img__small:hover{
+    box-shadow: 5px 5px 30px #555;
+    transform: translateY(-10px);
+    cursor: pointer;
+}
